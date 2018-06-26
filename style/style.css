@@ -1,0 +1,36 @@
+.container{
+    max-width: 800px;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+}
+
+/**********    Nav Bar    ************/
+.nav-bar{
+    background: #303841;
+    width: 100%;
+
+    position: fixed;
+    z-index: 1030;
+}
+
+.nav-bar h1 {
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 1.125em;
+    color: #FFF;
+    line-height: 1.334;
+    font-weight: 500;
+    margin: 0;
+}
+
+.nav-bar i {
+    cursor: pointer;
+}
+
+.nav-bar i:first-child {
+    margin-right: 30px;
+}
+
+.nav-bar i:last-child {
+    float: right;
+}

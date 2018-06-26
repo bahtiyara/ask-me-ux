@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
-import GreetingsReducer from './reducer_greetings';
+import QuestionsReducer from './reducer_questions';
 
 export default combineReducers({
-    greetings: GreetingsReducer
+    questions: QuestionsReducer
 });

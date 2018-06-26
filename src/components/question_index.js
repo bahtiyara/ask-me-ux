@@ -1,16 +1,44 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import _ from 'lodash';
 
 import NavBar from './nav_bar';
+import {fetchQuestions} from '../actions';
 
 class QuestionIndex extends Component {
+    componentDidMount() {
+        this.props.fetchQuestions();
+    }
+
     render() {
         return <div className='question-index'>
             <NavBar
                 rightIcon='add'
                 rightIconClick={ () => this.props.history.push('/new')}
-                pageTitle='设计问'/>
+                pageTitle='Ask me UX'/>
+            <ul className='question-list container'>
+                {this.renderListItem()}
+            </ul>
         </div>;
+    }
+
+    renderListItem() {
+        return _.map(this.props.questions, (question) => {
+            return <li key={question._id} className='question-list-item'>
+                <Link to={`/${question._id}`}>
+                    <div className='wrapper'>
+                        <h3>{question.title}</h3>
+                        <p>{question.desc}</p>
+                    </div>
+                </Link>
+            </li>;
+        });
     }
 }
 
-export default QuestionIndex;
+function mapStateToProps({questions}) {
+    return {questions};
+}
+
+export default connect(mapStateToProps, {fetchQuestions})(QuestionIndex);

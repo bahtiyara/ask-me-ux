@@ -8,6 +8,7 @@ import {fetchQuestions} from '../actions';
 
 class QuestionIndex extends Component {
     componentDidMount() {
+        document.querySelector('body').style.backgroundColor = 'rgba(0,0,0,0)';
         this.props.fetchQuestions();
     }
 

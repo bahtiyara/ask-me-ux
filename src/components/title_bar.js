@@ -14,7 +14,7 @@ class TitleBar extends Component {
                     component={this.renderInput}
                 />
                 <Field
-                    name='title'
+                    name='desc'
                     component={this.renderTextarea}
                 />
             </form>
@@ -31,7 +31,7 @@ class TitleBar extends Component {
 
     renderTextarea(field) {
         return <TextareaAutosize
-            {...field.TextareaAutosize}
+            {...field.input}
             placeholder='问题描述…'
         />;
     }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import NavBar from './nav_bar';
 import TitleBar from './title_bar';
 import {connect} from 'react-redux';
+import {createQuestion} from '../actions';
 
 class QuestionNew extends Component {
     componentDidMount() {
@@ -14,7 +15,7 @@ class QuestionNew extends Component {
             <NavBar
                 noShadow
                 rightIcon='save'
-                rightIconClick = {this.onFormSubmit}
+                rightIconClick = {this.onFormSubmit.bind(this)}
                 pageTitle=''
                 leftIconClick={() => this.props.history.push('/')}
                 leftIcon='arrow_back' />
@@ -35,7 +36,16 @@ class QuestionNew extends Component {
     }
 
     onFormSubmit() {
-        console.log('sss');
+        const {values} = this.props.form.TitleBarForm;
+        const input = document.querySelector('.title-bar input').value;
+        
+        if (input !== '') {
+            this.props.createQuestion(values, () => {
+                this.props.history.push('/');
+            });
+        } else {
+            console.log('Sorry, you have to enter a title');
+        }
     }
 }
 
@@ -43,4 +53,4 @@ function mapStateToProps({form}) {
     return {form};
 }
 
-export default connect(mapStateToProps)(QuestionNew);
+export default connect(mapStateToProps, {createQuestion})(QuestionNew);

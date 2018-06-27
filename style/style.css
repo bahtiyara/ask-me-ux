@@ -96,6 +96,10 @@
     text-overflow: ellipsis;
 }
 
+.question-list-item p:empty{
+    margin-top: 0;
+}
+
 /**********    Question New    ************/
 .title-bar {
     background-color: #303841;

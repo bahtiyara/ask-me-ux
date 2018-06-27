@@ -5,15 +5,17 @@ import TextareaAutosize from 'react-autosize-textarea';
 class TitleBar extends Component {
     render() {
         return <div className='title-bar'>
-            <form
-                className='container'>
+            <form className='container'>
                 <Field
+                    inputAutoFocus={this.props.autoFocus}
                     onChange={this.props.onInputChange}
                     name='title'
+                    inputValue={this.props.title}
                     component={this.renderInput}
                 />
                 <Field
                     name='desc'
+                    inputValue={this.props.desc}
                     component={this.renderTextarea}
                 />
             </form>
@@ -29,9 +31,10 @@ class TitleBar extends Component {
                 }
             }}
             autoComplete='off'
-            autoFocus
             placeholder='问题标题…'
             {...field.input}
+            value={field.inputValue}
+            autoFocus={field.inputAutoFocus}
         />;
     }
 
@@ -44,6 +47,7 @@ class TitleBar extends Component {
             }}
             placeholder='问题描述…'
             {...field.input}
+            value={field.inputValue}
         />;
     }
 }

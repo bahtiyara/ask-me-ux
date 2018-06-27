@@ -20,6 +20,7 @@ class QuestionNew extends Component {
                 leftIconClick={() => this.props.history.push('/')}
                 leftIcon='arrow_back' />
             <TitleBar
+                autoFocus={true}
                 onInputChange={() => this.onInputChange()}
             />
         </div>;
@@ -44,7 +45,7 @@ class QuestionNew extends Component {
                 this.props.history.push('/');
             });
         } else {
-            console.log('Sorry, you have to enter a title');
+            alert('不好意思，标题是必须填的');
         }
     }
 }

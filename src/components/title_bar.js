@@ -6,8 +6,8 @@ class TitleBar extends Component {
     render() {
         const {handleSubmit} = this.props;
         return <div className='title-bar'>
-            <form 
-                onSubmit={handleSubmit(this.onSubmit.bind(this))}
+            <form
+                onSubmit={handleSubmit(this.onFormSubmit)}
                 className='container'>
                 <Field
                     onChange={this.props.onInputChange}
@@ -24,6 +24,12 @@ class TitleBar extends Component {
 
     renderInput(field) {
         return <input
+            onKeyPress={e => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    document.querySelector('.title-bar textarea').focus();
+                }
+            }}
             autoComplete='off'
             autoFocus
             placeholder='问题标题…'
@@ -33,12 +39,17 @@ class TitleBar extends Component {
 
     renderTextarea(field) {
         return <TextareaAutosize
-            {...field.input}
+            onKeyDown={e => {
+                if (field.input.value === '' && e.key === 'Backspace') {
+                    document.querySelector('.title-bar input').focus();
+                }
+            }}
             placeholder='问题描述…'
+            {...field.input}
         />;
     }
 
-    onSubmit(values) {
+    onFormSubmit(values) {
         console.log(values);
     }
 }

@@ -10,6 +10,7 @@ class TitleBar extends Component {
                 onSubmit={handleSubmit(this.onSubmit.bind(this))}
                 className='container'>
                 <Field
+                    onChange={this.props.onInputChange}
                     name='title'
                     component={this.renderInput}
                 />
@@ -23,6 +24,7 @@ class TitleBar extends Component {
 
     renderInput(field) {
         return <input
+            autoComplete='off'
             autoFocus
             placeholder='问题标题…'
             {...field.input}

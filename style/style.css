@@ -96,3 +96,52 @@
 }
 
 /**********    Question New    ************/
+.title-bar {
+    background-color: #303841;
+    width: 100%;
+}
+
+.title-bar form {
+    padding-top: 54px;
+    padding-bottom: 46px;
+}
+
+.title-bar input {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+
+    font-family: PingFangSC-Regular;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.334;
+
+    margin-bottom: 10px;
+}
+
+.title-bar input,textarea:focus {
+    outline: none;
+}
+
+.title-bar input::placeholder,textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.title-bar textarea {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+
+    font-family: PingFangSC-Regular;
+    font-weight: 100;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.5;
+
+    resize: none;
+}

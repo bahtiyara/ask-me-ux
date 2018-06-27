@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NavBar from './nav_bar';
+import TitleBar from './title_bar';
 
 class QuestionNew extends Component {
     componentDidMount() {
@@ -14,6 +15,7 @@ class QuestionNew extends Component {
                 pageTitle=''
                 leftIconClick={() => this.props.history.push('/')}
                 leftIcon='arrow_back' />
+            <TitleBar />
         </div>;
     }
 }

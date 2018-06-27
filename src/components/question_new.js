@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import NavBar from './nav_bar';
 import TitleBar from './title_bar';
+import {connect} from 'react-redux';
 
 class QuestionNew extends Component {
     componentDidMount() {
@@ -13,6 +14,7 @@ class QuestionNew extends Component {
             <NavBar
                 noShadow
                 rightIcon='save'
+                rightIconClick = {this.onFormSubmit}
                 pageTitle=''
                 leftIconClick={() => this.props.history.push('/')}
                 leftIcon='arrow_back' />
@@ -31,6 +33,14 @@ class QuestionNew extends Component {
             ico.classList.add('disabled');
         }
     }
+
+    onFormSubmit() {
+        console.log('sss');
+    }
 }
 
-export default QuestionNew;
+function mapStateToProps({form}) {
+    return {form};
+}
+
+export default connect(mapStateToProps)(QuestionNew);

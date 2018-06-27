@@ -4,10 +4,8 @@ import TextareaAutosize from 'react-autosize-textarea';
 
 class TitleBar extends Component {
     render() {
-        const {handleSubmit} = this.props;
         return <div className='title-bar'>
             <form
-                onSubmit={handleSubmit(this.onFormSubmit)}
                 className='container'>
                 <Field
                     onChange={this.props.onInputChange}
@@ -47,10 +45,6 @@ class TitleBar extends Component {
             placeholder='问题描述…'
             {...field.input}
         />;
-    }
-
-    onFormSubmit(values) {
-        console.log(values);
     }
 }
 

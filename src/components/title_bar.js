@@ -7,22 +7,24 @@ class TitleBar extends Component {
         return <div className='title-bar'>
             <form className='container'>
                 <Field
-                    inputAutoFocus={this.props.autoFocus}
-                    onChange={this.props.onInputChange}
                     name='title'
-                    inputValue={this.props.title}
                     component={this.renderInput}
+                    onChange={this.props.onInputChange}
+                    inputAutoFocus={this.props.autoFocus}
+                    inputValue={this.props.title}
+                    
                 />
                 <Field
                     name='desc'
-                    inputValue={this.props.desc}
                     component={this.renderTextarea}
+                    inputValue={this.props.desc}
                 />
             </form>
         </div>;
     }
 
     renderInput(field) {
+        console.log(field);
         return <input
             onKeyPress={e => {
                 if (e.key === 'Enter') {
@@ -33,7 +35,7 @@ class TitleBar extends Component {
             autoComplete='off'
             placeholder='问题标题…'
             {...field.input}
-            value={field.inputValue}
+            // value={field.inputValue}
             autoFocus={field.inputAutoFocus}
         />;
     }

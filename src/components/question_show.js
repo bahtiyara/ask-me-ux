@@ -27,8 +27,13 @@ class QuestionShow extends Component {
                 autoFocus={false}
                 title={question.title}
                 desc={question.desc}
+                onInputChange={() => this.onInputChange()}
             />
         </div>;
+    }
+
+    onInputChange() {
+        console.log('haha');
     }
 }
 

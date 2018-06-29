@@ -21,7 +21,7 @@ class QuestionShow extends Component {
                 noShadow
                 rightIcon='more_horiz'
                 leftIcon='arrow_back'
-                leftIconClick={() => this.props.history.push('/')}
+                leftIconClick={() => this.props.history.goBack()}
             />
             <TitleBar
                 initialValues={{

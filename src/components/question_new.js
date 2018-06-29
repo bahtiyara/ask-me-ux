@@ -17,7 +17,7 @@ class QuestionNew extends Component {
                 rightIcon='save'
                 rightIconClick = {this.onFormSubmit.bind(this)}
                 pageTitle=''
-                leftIconClick={() => this.props.history.push('/')}
+                leftIconClick={() => this.props.history.goBack()}
                 leftIcon='arrow_back' />
             <TitleBar
                 autoFocus={true}

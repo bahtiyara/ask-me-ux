@@ -100,7 +100,7 @@
     margin-top: 0;
 }
 
-/**********    Question New    ************/
+/**********    Title Bar    ************/
 .title-bar {
     background-color: #303841;
     width: 100%;
@@ -123,16 +123,9 @@
     font-size: 18px;
     color: #FFFFFF;
     line-height: 1.334;
+    caret-color: #FF500A;
 
     margin-bottom: 10px;
-}
-
-.title-bar input,textarea:focus {
-    outline: none;
-}
-
-.title-bar input::placeholder,textarea::placeholder {
-    color: rgba(255, 255, 255, 0.2);
 }
 
 .title-bar textarea {
@@ -147,6 +140,15 @@
     font-size: 16px;
     color: #FFFFFF;
     line-height: 1.5;
+    caret-color: #FF500A;
 
     resize: none;
+}
+
+.title-bar input,textarea:focus {
+    outline: none;
+}
+
+.title-bar input::placeholder,textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
 }

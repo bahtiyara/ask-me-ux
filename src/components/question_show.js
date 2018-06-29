@@ -24,16 +24,12 @@ class QuestionShow extends Component {
                 leftIconClick={() => this.props.history.push('/')}
             />
             <TitleBar
-                autoFocus={false}
-                title={question.title}
-                desc={question.desc}
-                onInputChange={() => this.onInputChange()}
+                initialValues={{
+                    title: question.title,
+                    desc: question.desc
+                }}
             />
         </div>;
-    }
-
-    onInputChange() {
-        console.log('haha');
     }
 }
 

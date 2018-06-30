@@ -16,8 +16,9 @@ class QuestionIndex extends Component {
         return <div className='question-index'>
             <NavBar
                 rightIcon='add'
-                rightIconClick={ () => this.props.history.push('/new')}
-                pageTitle='Ask me UX'/>
+                rightIconClick={() => this.props.history.push('/new')}
+                pageTitle='Ask me UX'
+            />
             <ul className='question-list container'>
                 {this.renderListItem()}
             </ul>
@@ -29,7 +30,7 @@ class QuestionIndex extends Component {
             return <li key={question._id} className='question-list-item'>
                 <Link to={`/${question._id}`}>
                     <div className='wrapper'>
-                        <h3>{question.title}</h3>
+                        <h2>{question.title}</h2>
                         <p>{question.desc}</p>
                     </div>
                 </Link>

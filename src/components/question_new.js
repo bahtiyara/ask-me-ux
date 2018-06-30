@@ -16,11 +16,12 @@ class QuestionNew extends Component {
                 noShadow
                 rightIcon='save'
                 rightIconClick = {this.onFormSubmit.bind(this)}
-                pageTitle=''
+                leftIcon='arrow_back'
                 leftIconClick={() => this.props.history.goBack()}
-                leftIcon='arrow_back' />
+            />
             <TitleBar
-                autoFocus={true}
+                noShadow
+                autoFocus
                 onInputChange={() => this.onInputChange()}
             />
         </div>;

@@ -4,8 +4,8 @@ import TextareaAutosize from 'react-autosize-textarea';
 
 class TitleBar extends Component {
     render() {
-        const {onInputChange, autoFocus} = this.props;
-        return <div className='title-bar'>
+        const {onInputChange, autoFocus, noShadow} = this.props;
+        return <div className='title-bar' style={{boxShadow: noShadow ? '':'0 2px 4px 0 rgba(0,0,0,0.20)'}}>
             <form className='container'>
                 <Field
                     name='title'
@@ -37,7 +37,8 @@ class TitleBar extends Component {
                     document.querySelector('.title-bar input').focus();
                 }
             }}
-            {...field.input} />;
+            {...field.input}
+        />;
     }
 }
 

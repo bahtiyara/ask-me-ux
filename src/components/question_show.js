@@ -3,6 +3,7 @@ import NavBar from './nav_bar';
 import TitleBar from './title_bar';
 import {fetchQuestion} from '../actions';
 import {connect} from 'react-redux';
+import Card from './card';
 
 class QuestionShow extends Component {
     componentDidMount() {
@@ -29,7 +30,23 @@ class QuestionShow extends Component {
                     desc: question.desc
                 }}
             />
+            <div className='answers container'>
+                {this.renderAnswer()}
+            </div>
         </div>;
+    }
+
+    renderAnswer() {
+        const {question} = this.props;
+        return question.answers.map((answer) => {
+            return <Card style={{ marginBottom: 20 }} values={{
+                avatarUrl: 'https://www.gstatic.com/webp/gallery/4.sm.jpg',
+                title: '齐俊元',
+                desc: '6月12日 12:31',
+                content: answer,
+                likedNum: 617
+            }} />;
+        });
     }
 }
 

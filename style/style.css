@@ -230,3 +230,32 @@ span{
     border-radius: 100%;
     background-size: cover;
 }
+
+/**********    Droplist    ************/
+.droplist{
+    z-index: 1060;
+    display: block;
+    width: 200px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
+    border-radius: 4px;
+
+    position: absolute;
+}
+
+.droplist ul {
+    margin: 4px 0;
+    padding: 0;
+}
+
+.droplist li {
+    list-style: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.droplist span{
+    line-height: 24px;
+    margin-left: 12px;
+}

@@ -3,13 +3,13 @@ import Chip from './chip';
 
 class Card extends Component {
     render() {
-        const {avatarUrl, title, desc, content, likedNum} = this.props.values;
+        const {avatarUrl, title, desc, content, likedNum, clickMore} = this.props.values;
         return <div className='card'>
             <div className='wrapper'>
                 <div className='card-header'>
                     <Chip avatarUrl={avatarUrl} title={title} desc={desc} />
                     <div className='card-header-right'>
-                        <i className='material-icons'>more_horiz</i>
+                        <i className='material-icons' onClick={clickMore.bind(this)} >more_horiz</i>
                     </div>
                 </div>
                 <p>{content}</p>

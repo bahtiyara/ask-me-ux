@@ -4,6 +4,7 @@ import TitleBar from './title_bar';
 import {fetchQuestion} from '../actions';
 import {connect} from 'react-redux';
 import Card from './card';
+import Droplist from './droplist';
 
 class QuestionShow extends Component {
     componentDidMount() {
@@ -18,6 +19,15 @@ class QuestionShow extends Component {
         }
 
         return <div className='question-show'>
+            <Droplist content={{
+                row1: {
+                    icon: 'delete',
+                    text: '删除回答',
+                    click: () => {
+                        console.log('delete answer successfull');
+                    }
+                }
+            }} />
             <NavBar
                 noShadow
                 rightIcon='more_horiz'
@@ -44,11 +54,23 @@ class QuestionShow extends Component {
                 title: '齐俊元',
                 desc: '6月12日 12:31',
                 content: answer,
-                likedNum: 617
+                likedNum: 617,
+                clickMore: (e) => {
+                    // positioning
+                    const style = `top: ${e.target.offsetTop + 29}px; left: ${e.target.offsetLeft}px`;
+                    document.querySelector('.droplist').style.cssText = style;
+                    // toggle the view of droplist
+                    
+                }
             }} />;
         });
     }
+
+    clickMore() {
+
+    }
 }
+
 
 function mapStateToProps({questions}, ownProps) {
     const {id} = ownProps.match.params;
